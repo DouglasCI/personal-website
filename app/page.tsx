@@ -1,103 +1,177 @@
-import Image from "next/image";
+import { Bold } from "@/components/bold";
+import { InfoCard } from "@/components/info-card";
+import { FaExternalLinkSquareAlt } from "react-icons/fa";
+import { Highlight } from "@/components/highlight";
+import { ModeToggle } from "@/components/mode-toggle";
+import { SectionHeader } from "@/components/section-header";
+import { ProjectCard } from "@/components/project-card";
+import { Separator } from "@/components/ui/separator";
 
 export default function Home() {
-  return (
-    <div className="grid grid-rows-[20px_1fr_20px] items-center justify-items-center min-h-screen p-8 pb-20 gap-16 sm:p-20 font-[family-name:var(--font-geist-sans)]">
-      <main className="flex flex-col gap-[32px] row-start-2 items-center sm:items-start">
-        <Image
-          className="dark:invert"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={180}
-          height={38}
-          priority
-        />
-        <ol className="list-inside list-decimal text-sm/6 text-center sm:text-left font-[family-name:var(--font-geist-mono)]">
-          <li className="mb-2 tracking-[-.01em]">
-            Get started by editing{" "}
-            <code className="bg-black/[.05] dark:bg-white/[.06] px-1 py-0.5 rounded font-[family-name:var(--font-geist-mono)] font-semibold">
-              app/page.tsx
-            </code>
-            .
-          </li>
-          <li className="tracking-[-.01em]">
-            Save and see your changes instantly.
-          </li>
-        </ol>
+  const natooraHyperlink = <a
+    href="https://natoora.com"
+    target="_blank"
+    rel="noopener noreferrer"
+    className="hover:underline"
+  >
+    <Highlight>Natoora</Highlight>
+  </a>
 
-        <div className="flex gap-4 items-center flex-col sm:flex-row">
-          <a
-            className="rounded-full border border-solid border-transparent transition-colors flex items-center justify-center bg-foreground text-background gap-2 hover:bg-[#383838] dark:hover:bg-[#ccc] font-medium text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 sm:w-auto"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className="dark:invert"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={20}
-              height={20}
-            />
-            Deploy now
-          </a>
-          <a
-            className="rounded-full border border-solid border-black/[.08] dark:border-white/[.145] transition-colors flex items-center justify-center hover:bg-[#f2f2f2] dark:hover:bg-[#1a1a1a] hover:border-transparent font-medium text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 w-full sm:w-auto md:w-[158px]"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Read our docs
-          </a>
+  return (
+    <div className="mx-auto min-h-screen max-w-screen-xl px-6">
+      <div className="flex justify-between gap-4">
+        <div className="flex flex-col sticky top-0 max-h-screen px-6 py-30 gap-4 w-1/2 justify-between items-center">
+          <div className="flex flex-col gap-3">
+            <div className="text-6xl font-medium">Douglas Chen</div>
+
+            <div className="text-2xl font-extralight opacity-70">Software Developer</div>
+          </div>
+
+          <Separator orientation="vertical" className="!h-30 bg-highlight opacity-50 transition-[background-color] duration-200" />
+
+          <Separator orientation="vertical" className="!h-30 bg-highlight opacity-50 transition-[background-color] duration-200" />
+
+          <div className="flex justify-center"><ModeToggle /></div>
         </div>
-      </main>
-      <footer className="row-start-3 flex gap-[24px] flex-wrap items-center justify-center">
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/file.svg"
-            alt="File icon"
-            width={16}
-            height={16}
-          />
-          Learn
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/window.svg"
-            alt="Window icon"
-            width={16}
-            height={16}
-          />
-          Examples
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/globe.svg"
-            alt="Globe icon"
-            width={16}
-            height={16}
-          />
-          Go to nextjs.org →
-        </a>
-      </footer>
+      
+        <div className="flex flex-col items-end gap-4 py-32 px-6 w-1/2">
+          <div className="flex flex-col gap-12">
+            <div className="flex flex-col gap-3">
+              <SectionHeader sectionName="About" />
+
+              <div className="font-light text-lg text-subtle">
+                I&apos;m a developer focused on delivering well-designed and practical solutions.
+                I pay close attention not only to functionality, but also to the structure, scalability, 
+                and user experience of the systems I build. Whether I&apos;m working on front-end design or 
+                back-end logic, I look for <Bold>clean, efficient, and reliable solutions</Bold>.
+              </div>
+              
+              <div className="font-light text-lg text-subtle">
+                I&apos;m a full-stack developer at {natooraHyperlink}, where I help <Bold>modernize our codebase</Bold>. 
+                On the frontend, I&apos;m migrating a legacy Angular app to <Highlight>React</Highlight> with Material UI, to
+                <Bold> enable a more scalable and developer-friendly architecture</Bold>. 
+                While on the backend, I work with <Highlight>Django REST Framework</Highlight> to <Bold>improve API structure and maintainability</Bold>.
+              </div>
+
+              <div className="font-light text-lg text-subtle">
+                In my free time, I mostly play piano and games, and once in a while, I even compose a bit 
+                of <span className="relative group"><Bold>music</Bold><span className="music-note">🎵</span></span>.
+              </div>
+            </div>
+
+            <div>
+              <SectionHeader sectionName="Experience" className="mb-2" />
+              
+              <div className="flex flex-col gap-2">
+                <InfoCard
+                  title="Natoora"
+                  date="02/2025 - Present"
+                  href="https://natoora.com"
+                  badges={
+                    [
+                      "JavaScript", "TypeScript", "React", "TanStack", "Material UI", "AngularJS", "Python",
+                      "Django", "DRF", "GCP", "Docker", "Kubernetes", "git", "Jira", "Figma", "Scrum"
+                    ]
+                  }
+                  content={
+                    <div className="font-light text-subtle">
+                      Migrate legacy Angular frontend to React with Material UI, and refactor a 
+                      Django REST Framework API for better modularity and RESTful design. Work with 
+                      a <Bold>team that includes designers, product managers, and other developers</Bold>. 
+                      Taking advantage of <Bold>good communication to assure agile deployment</Bold>.
+                    </div>
+                  }
+                />
+              </div>
+            </div>
+            
+            <div>
+              <SectionHeader sectionName="Education" className="mb-2" />
+
+              <div className="flex flex-col gap-3">
+                <InfoCard 
+                  title="Bachelor's Degree in Computer Science"
+                  date="03/2019 - 10/2024"
+                  badges={
+                    [
+                      "Logic", "Data Structures", "Programming Languages", "Computer Theory", "Software Design", 
+                      "Software Architecture", "Object-oriented Programming", "Machine Learning", "Databases", "Computer Graphics"
+                    ]
+                  }
+                  content={
+                    <div className="font-light text-subtle">
+                      Earned my degree from the Federal University of São Carlos, where I developed <Bold>solid skills in 
+                      programming logic, software design, and computational thinking</Bold>. The curriculum covered a wide 
+                      range of topics, from low-level programming in C to high-level AI techniques in machine learning.
+                    </div>
+                  }
+                />
+
+                <InfoCard 
+                  title="Research Initiation"
+                  date="02/2024 - 10/2024"
+                  badges={["Java", "Rust", "Parallelism", "Code Optimization", "Distributed Systems"]}
+                  content={
+                    <div className="font-light text-subtle">
+                      Convert a consensus algorithm from Java to Rust, <Bold>optimizing for performance</Bold>. 
+                      Use <Bold>parallelism and task scheduling</Bold> to synchronize network communication with disk I/O.
+                    </div>
+                  }
+                />
+
+                <InfoCard 
+                  title="Web Development Bootcamp"
+                  date="06/2024 - 10/2024"
+                  href="https://www.udemy.com/certificate/UC-d8f6ef5a-444b-42d0-9ec5-a66872e55225/"
+                  badges={
+                    [
+                      "HTML", "CSS", "Bootstrap", "Javascript", "Node.js", "EJS", "Express.js", 
+                      "JQuery", "API REST", "SQL", "PostgreSQL", "OAuth"
+                    ]
+                  }
+                  content={
+                    <div className="font-light text-subtle">
+                      Learn the <Bold>fundamentals of full-stack Web development</Bold> from pure HTML and CSS, 
+                      to frontend and backend integration using Node.js and EJS, as well as the basics of 
+                      SQL and user authentication.
+                    </div>
+                  }
+                />
+
+                <div>
+                  <a
+                    href="/resume.pdf"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="flex flex-row items-center group w-fit border-1 rounded-md border-accent gap-2 ml-7 mt-3 p-2"
+                  >
+                    <Highlight className="text-xl">View Résumé</Highlight>
+                    <FaExternalLinkSquareAlt
+                      size={20}
+                      className="text-highlight transition-transform duration-200 group-hover:scale-115 origin-bottom-left"
+                    />
+                  </a>
+                </div>
+              </div>
+            </div>
+
+            <div>
+              <SectionHeader sectionName="Projects" className="mb-2" />
+
+              <ProjectCard 
+                content={
+                  <div className="font-light text-subtle">
+                    Learn the <Bold>fundamentals of full-stack Web development</Bold> from pure HTML and CSS, 
+                    to frontend and backend integration using Node.js and EJS, as well as the basics of 
+                    SQL and user authentication.
+                  </div>
+                }
+                thumbnail={"/personal_website.png"}
+              />
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
   );
 }

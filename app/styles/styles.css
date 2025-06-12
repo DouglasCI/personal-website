@@ -1,0 +1,30 @@
+.interactive-card {
+  padding: 0.5rem;
+  border: 1px solid transparent;
+  border-radius: var(--radius-md);
+  transition: background-color 0.3s, border-color 0.3s;
+}
+
+.interactive-card:hover {
+  background-color: var(--color-card);
+}
+
+.music-note {
+  position: absolute;
+  top: -1.25rem;
+  left: 25%;
+  transform: translateX(-50%);
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  pointer-events: none;
+  animation: float 1s ease-in-out infinite;
+}
+
+.group:hover .music-note {
+  opacity: 1;
+}
+
+@keyframes float {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-6px); }
+}
